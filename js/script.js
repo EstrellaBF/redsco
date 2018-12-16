@@ -61,54 +61,14 @@ $(function () {
         }
     });
 
-    ///////////////////////////////
-    // Center Home Slideshow Text
-    ///////////////////////////////
-
-    function centerHomeBannerText() {
-        var bannerText = jQuery('#wrapper .starting-text');
-        var bannerTextTop = (jQuery('#wrapper').actual('height') / 2) - (jQuery('#wrapper .starting-text').actual('height') / 2) - 20;
-        bannerText.css('padding-top', bannerTextTop + 'px');
-        bannerText.show();
-    }
-
-    centerHomeBannerText();
-
-    jQuery(window).smartresize(function () {
-        setHomeBannerHeight();
-        centerHomeBannerText();
-    });
-
 });
-
-//A BORRAR
-/*
-$(document).ready(function () {
-    new WOW().init();
-    $("#client-speech").owlCarousel({
-        autoPlay: 3000,
-        navigation: false, // Show next and prev buttons
-        slideSpeed: 700,
-        paginationSpeed: 1000,
-        singleItem: true
-    });
-
-    var setHomeBannerHeight = function () {
-        var homeHeight = $(window).height();
-        $('#overlay-1').height(homeHeight);
-    }
-    setHomeBannerHeight();
-});
-*/
-
-
-
 
 $(document).ready(function () {
 
     var menu = $('#navigation > .navbar');
-    var origOffsetY = $('#bottom').offset().top;
-
+  
+    var origOffsetY = $('#navbar').offset().top;
+   
     function scroll() {
         if ($(window).scrollTop() > origOffsetY) {
             menu.addClass('navbar-white');

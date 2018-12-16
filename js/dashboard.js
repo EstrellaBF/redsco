@@ -8,23 +8,7 @@
 $(function() {
     "use strict";
 
-    //Make the dashboard widgets sortable Using jquery UI
-    $(".connectedSortable").sortable({
-        placeholder: "sort-highlight",
-        connectWith: ".connectedSortable",
-        handle: ".box-header, .nav-tabs",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-    }).disableSelection();
     $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
-    //jQuery UI sortable for the todo list
-    $(".todo-list").sortable({
-        placeholder: "sort-highlight",
-        handle: ".handle",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-    }).disableSelection();
-    ;
 
     $('.daterange').daterangepicker(
             {
@@ -42,9 +26,6 @@ $(function() {
     function(start, end) {
         alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
     });
-
-    /* jQueryKnob */
-    $(".knob").knob();
 
     //Fix for charts under tabs
     $('.box ul.nav a').on('shown.bs.tab', function(e) {
